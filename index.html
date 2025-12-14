@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nuestra Boda - Invitación y Confirmación</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- MENSAJE INTRO -->
+        <section class="intro-text">
+            <h1>Nuestra Boda</h1>
+            <p>
+                Querida familia y amigos:
+
+En el siguiente boton, encontrarán un mensaje. Si deseas apoyarnos, escribenos.
+
+            </p>
+            <a href="Lluvia de sobres.jpeg" download class="btn-download">
+    VER
+</a>
+            </button>
+        </section>
+
+        <!-- SLIDER EN RECUADRO -->
+        <section class="slider-container">
+            <div class="slider-box">
+                <img src="img1.jpeg" alt="Boda" />
+            </div>
+            <div class="slider-box">
+                <img src="img2.jpeg" alt="Boda" />
+            </div>
+            <div class="slider-box">
+                <img src="img3.jpeg" alt="Boda" />
+            </div>
+             <div class="slider-box">
+                <img src="img4.jpeg" alt="Boda" />
+            </div>
+            <div class="slider-box">
+                <img src="img5.jpeg" alt="Boda" />
+            </div>
+            <div class="slider-box">
+                <img src="img6.jpeg" alt="Boda" />
+            </div>
+             <div class="slider-box">
+                <img src="img7.jpeg" alt="Boda" />
+            </div>
+            <div class="slider-box">
+                <img src="img8.jpeg" alt="Boda" />
+            </div>
+            <div class="slider-box">
+                <img src="img9.jpeg" alt="Boda" />
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="form-section">
+            <h2 class="form-title">Confirmación & Mensaje</h2>
+            <p class="sub">Déjanos tu contacto y unas palabras especiales.</p>
+
+            <form action="https://formspree.io/f/tu_codigo_aqui" method="POST">
+                
+                <label>Nombre completo</label>
+                <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required>
+
+                <label>Correo electrónico</label>
+                <input type="email" name="correo" placeholder="Ej: correo@ejemplo.com" required>
+
+                <label>Mensaje para los novios</label>
+                <textarea 
+                    name="mensaje" 
+                    rows="4" 
+                    placeholder="Ej: Les deseo un matrimonio lleno del amor de Dios…" 
+                    required 
+                    minlength="10" 
+                    maxlength="300"
+                    ></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+
+            <!-- CUADRO PDF -->
+            <div class="pdf-box">
+                <p>
+
+            Muy pronto compartiremos la fecha exacta de nuestra ceremonia de matrimonio, y nos encantaría contar con tu presencia en este día tan especial.</p>
+                <a href="invitacion.pdf" class="btn-pdf" download>Descargar invitación (PDF)</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JS – SLIDER -->
+    <script>
+        const slides = document.querySelectorAll('.slider-box');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = (i === index) ? '1' : '0';
+                slide.style.zIndex = (i === index) ? '10' : '1';
+            });
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        // Inicializar
+        showSlide(current);
+
+        // Cambiar cada 4 segundos
+        setInterval(nextSlide, 4000);
+    </script>
+</body>
+</html>
