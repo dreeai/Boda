@@ -114,5 +114,20 @@
         // Cambiar cada 4 segundos
         setInterval(nextSlide, 4000);
     </script>
+    <!-- POP-UP TRANSMISIÓN EN VIVO -->
+<div id="popup-overlay">
+  <div id="popup">
+    <h2>💍 Aviso importante 👶🏻</h2>
+    <p>Será transmitido en vivo para quienes nos quieran acompañar a la distancia.</p>
+    <button onclick="closePopup()">Entendido</button>
+  </div>
+</div>
+
+<script>
+  function closePopup() {
+    document.getElementById("popup-overlay").style.display = "none";
+  }
+</script>
+
 </body>
 </html>
